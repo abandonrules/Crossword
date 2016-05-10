@@ -31,7 +31,7 @@
 			
 			// initialize some variables
 			var $complete = $('<div class="overlay"><h1>Congratulations!</h1><div class="message"></div><a class="close" href="#">X</a></div>');
-			var message = '<p>You completed the crossword, well done!</p>';
+			var message = '<p>You completed the crossword, well done! <img src="./gfx/winner.png"> </p>';
 
 			var tbl = ['<table id="puzzle">'];
 			var puzzEl = this;
@@ -46,7 +46,7 @@
 			var $actives;
 			var activePosition = 0;
 			var activeClueIndex = 0;
-			var hintsRemaining = 10;
+			var hintsRemaining = 15;
 			var currOri;
 			var targetInput;
 			var mode = 'interacting';
@@ -326,9 +326,9 @@
 					var $button = $('<a class="btn reveal"></a>');
 
 					$button.click(function(){
-						if(hintsRemaining < 1){
-							return;
-						}
+						//if(hintsRemaining < 1){
+						//	return;
+						//}
 
 						var data = puzz.data[activePosition];
 						var $entries = $('.position-'+(activePosition)+' input');
@@ -429,6 +429,8 @@
 							break;
 						}
 					}
+                        //remove me
+						//this.triggerGameWon();
 					if(gameComplete){
 						this.triggerGameWon();
 					}
