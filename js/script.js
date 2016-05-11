@@ -166,6 +166,14 @@
             startx: 7,
             starty:1
             },
+        {
+            clue:"the answer to life the universe and everything",
+            answer:"42",
+            position:3,
+            orientation: "across",
+            startx: 1,
+            starty:13
+            },
 			] 
 	
 		$('#puzzle-wrapper').crossword({
